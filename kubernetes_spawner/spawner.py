@@ -145,8 +145,6 @@ class KubernetesSpawner(Spawner):
         ip = pod.status.pod_ip
         self.log.debug("Pod ready at '%s:%s'", ip, self.container_port)
 
-        self.user.server.ip = ip
-        self.user.server.port = self.container_port
         return ip, self.container_port
 
     def get_pod(self):
